@@ -1,0 +1,5 @@
+[2021/10/27 14:14:24] root INFO: logits1: 
+[2021/10/27 14:14:24] root INFO: 	mean diff: check passed: False, value: 2.846391453203978e-06
+[2021/10/27 14:14:24] root INFO: logits2: 
+[2021/10/27 14:14:24] root INFO: 	mean diff: check passed: False, value: 2.874308393074898e-06
+[2021/10/27 14:14:24] root INFO: diff check failed
