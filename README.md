@@ -1,5 +1,5 @@
 # CASENet: PyTorch Implementation
-This is an implementation for paper [CASENet: Deep Category-Aware Semantic Edge Detection](https://arxiv.org/abs/1705.09759).
+This is a paddle implementation for paper [CASENet: Deep Category-Aware Semantic Edge Detection](https://arxiv.org/abs/1705.09759).
 
 This repository has been adapted to work with the Cityscapes Dataset.
 
@@ -19,16 +19,7 @@ The model configuration (.prototxt) can be found: [here.](https://github.com/Chr
 
 The download links for pretrained weights for CASENet can be found: [here.](https://github.com/Chrisding/seal#usage)
 
-### Converting Caffe weights to PyTorch
-To use the pretrained caffemodel in PyTorch, use [extract-caffe-params](https://github.com/nilboy/extract-caffe-params) to save each layer's weights in numpy format. The code along with instructions for usage can be found in the utils folder. 
-
-To load these numpy weights for each layer into a PyTorch model, run:
-```
-python modules/CASENet.py
-```
-after updating the directory path at [this line](https://github.com/anirudh-chakravarthy/CASENet/blob/master/modules/CASENet.py#L386) to the parent directory containing the numpy files (use absolute paths).
-
-**NOTE**: The Pytorch pre-trained weights can be downloaded from: [Google Drive.](https://drive.google.com/open?id=1zxshISZtq0_S6zFB37F-FhE9wT1ZBrGK)
+The Pytorch pre-trained weights can be downloaded from: [Google Drive.](https://drive.google.com/open?id=1zxshISZtq0_S6zFB37F-FhE9wT1ZBrGK)
 
 ## Training
 For training, run:
@@ -77,17 +68,3 @@ python get_results_for_benchmark.py -m pretrained_models/model_casenet.pth.tar -
 ```
 
 A class wise prediction map will be generated in the output directory specified.
-
-## Additional changes
-1. Added script to convert edges to contours and visualize
-2. Implemented gradient accumulation to increase batch size without increasing memory usage.
-3. Cleared unused variable to empty cache memory.
-
-## Acknowledgements
-1. Data processing was done from the following repository: <https://github.com/Chrisding/cityscapes-preprocess>
-
-2. Conversion from caffemodel to numpy format was done using the following repository: <https://github.com/nilboy/extract-caffe-params>
-
-3. The model was heavily referenced from the following repository for the Semantic Boundaries Dataset: <https://github.com/lijiaman/CASENet>
-
-4. The original Caffe implementation of the paper, can be downloaded from the following link: <http://www.merl.com/research/license#CASENet>
